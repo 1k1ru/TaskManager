@@ -90,7 +90,13 @@ namespace TaskManager
 
             if (Logging)
             {
-                LogTable.Add(new LogNode(Time, InProgress, Ready));
+                List<string> readyTasks = new List<string>;
+                foreach (var task in Ready)
+                {
+                    readyTasks.Add(task.Name);
+                }
+
+                LogTable.Add(new LogNode(Time, InProgress.Name, readyTasks));
             }
 
             Time++;

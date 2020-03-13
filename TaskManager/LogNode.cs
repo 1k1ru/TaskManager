@@ -5,14 +5,14 @@ namespace TaskManager
     public class LogNode
     {
         public int Time;
-        public Task InProgress;
-        public List<Task> Ready;
+        public string InProgress;
+        public List<string> Ready;
 
-        public LogNode(int time, Task inProgress, List<Task> ready)
+        public LogNode(int time, string inProgress, List<string> ready)
         {
             this.Time = time;
             this.InProgress = inProgress;
-            this.Ready = ready.GetRange(0, ready.Count);
+            this.Ready = ready;
         }
     }
 }
