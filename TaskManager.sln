@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager", "TaskManager\TaskManager.csproj", "{80FE0973-99C5-48B2-8CCF-8FF90B3CBD00}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManagerUI", "TaskManagerUI\TaskManagerUI.csproj", "{D62A12FB-DC18-4255-B21F-F938A8189B64}"
+	ProjectSection(ProjectDependencies) = postProject
+		{80FE0973-99C5-48B2-8CCF-8FF90B3CBD00} = {80FE0973-99C5-48B2-8CCF-8FF90B3CBD00}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

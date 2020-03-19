@@ -7,9 +7,9 @@ namespace TaskManager
 {
     public class TaskManager
     {
-        public List<Task> Tasks { get; private set; }
-        public int UpdatePriorityInterval { get; private set; }
-        public int ExecTime { get; private set; }
+        public List<Task> Tasks { get; set; }
+        public int PriorityUpdateInterval { get; set; }
+        public int ExecTime { get; set; }
         public bool Logging { get; set; }
 
         public int Time { get; private set; }
@@ -19,10 +19,24 @@ namespace TaskManager
         
         public List<LogNode> LogTable { get; private set; }
 
-        public TaskManager(List<Task> tasks, int updatePriorityInterval, int execTime, bool logging = false)
+        public TaskManager(bool logging = false)
+        {
+            Logging = logging;
+
+            Time = 0;
+            InProgressTime = 0;
+            Ready = new List<Task>();
+
+            if (Logging)
+            {
+                LogTable = new List<LogNode>();
+            }
+        }
+
+        public TaskManager(List<Task> tasks, int priorityUpdateInterval, int execTime, bool logging = false)
         {
             this.Tasks = tasks;
-            this.UpdatePriorityInterval = updatePriorityInterval;
+            this.PriorityUpdateInterval = priorityUpdateInterval;
             this.ExecTime = execTime;
             this.Logging = logging;
 
@@ -68,7 +82,7 @@ namespace TaskManager
                 }
             }
 
-            if (Time % UpdatePriorityInterval == 0)
+            if (Time % PriorityUpdateInterval == 0)
             {
                 UpdatePriorities();
             }
@@ -90,13 +104,16 @@ namespace TaskManager
 
             if (Logging)
             {
-                List<string> readyTasks = new List<string>;
+                List<string> readyTasks = new List<string>();
                 foreach (var task in Ready)
                 {
                     readyTasks.Add(task.Name);
                 }
 
-                LogTable.Add(new LogNode(Time, InProgress.Name, readyTasks));
+                string inProg = "";
+                if (InProgress != null)
+                    inProg = InProgress.Name;
+                LogTable.Add(new LogNode(Time, inProg, readyTasks));
             }
 
             Time++;
