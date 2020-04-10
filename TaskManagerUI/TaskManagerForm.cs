@@ -24,7 +24,6 @@ namespace TaskManagerUI
             InitializeComponent();
 
             setup = new SetupForm();
-            taskManager = new global::TaskManager.TaskManager(true);
         }
 
         private void button_setup_Click(object sender, EventArgs e)
@@ -34,7 +33,9 @@ namespace TaskManagerUI
 
         private void button_exec_Click(object sender, EventArgs e)
         {
-            taskManager.Tasks = setup.Tasks.GetRange(0, setup.Tasks.Count);
+            taskManager = new global::TaskManager.TaskManager(true);
+
+            taskManager.Tasks = new List<Task>(setup.Tasks.ToArray());
             taskManager.ExecTime = setup.ExecTime;
             taskManager.PriorityUpdateInterval = setup.PriorityUpdateInterval;
 
@@ -77,29 +78,6 @@ namespace TaskManagerUI
                 }
                 
             }
-        }
-
-        private void test_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < 3; i++)
-            {
-                Series s1 = new Series
-                {
-                    ChartArea = "chartArea",
-                    ChartType = SeriesChartType.RangeBar,
-                    Legend = "legend",
-                    Name = "Series" + i,
-
-                };
-                chartExec.Series.Add(s1);
-            }
-
-            chartExec.Series[0].Points.AddXY(1, 0, 1);
-            chartExec.Series[0].Points.AddXY(1, 2, 3);
-            chartExec.Series[1].Points.AddXY(1, 1, 2);
-            chartExec.Series[2].Points.AddXY(1, 3, 4);
-
-            
         }
     }
 }

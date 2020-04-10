@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.chartExec = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.button_setup = new System.Windows.Forms.Button();
             this.button_exec = new System.Windows.Forms.Button();
-            this.test = new System.Windows.Forms.Button();
             this.chartWait = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -47,11 +46,11 @@
             // 
             // chartExec
             // 
-            chartArea5.AxisY.Title = "time";
-            chartArea5.Name = "chartArea";
-            this.chartExec.ChartAreas.Add(chartArea5);
-            legend5.Name = "legend";
-            this.chartExec.Legends.Add(legend5);
+            chartArea1.AxisY.Title = "time";
+            chartArea1.Name = "chartArea";
+            this.chartExec.ChartAreas.Add(chartArea1);
+            legend1.Name = "legend";
+            this.chartExec.Legends.Add(legend1);
             this.chartExec.Location = new System.Drawing.Point(9, 31);
             this.chartExec.Margin = new System.Windows.Forms.Padding(6);
             this.chartExec.Name = "chartExec";
@@ -81,23 +80,12 @@
             this.button_exec.UseVisualStyleBackColor = true;
             this.button_exec.Click += new System.EventHandler(this.button_exec_Click);
             // 
-            // test
-            // 
-            this.test.Enabled = false;
-            this.test.Location = new System.Drawing.Point(510, 460);
-            this.test.Name = "test";
-            this.test.Size = new System.Drawing.Size(96, 40);
-            this.test.TabIndex = 3;
-            this.test.Text = "test";
-            this.test.UseVisualStyleBackColor = true;
-            this.test.Click += new System.EventHandler(this.test_Click);
-            // 
             // chartWait
             // 
-            chartArea6.Name = "chartArea";
-            this.chartWait.ChartAreas.Add(chartArea6);
-            legend6.Name = "legend";
-            this.chartWait.Legends.Add(legend6);
+            chartArea2.Name = "chartArea";
+            this.chartWait.ChartAreas.Add(chartArea2);
+            legend2.Name = "legend";
+            this.chartWait.Legends.Add(legend2);
             this.chartWait.Location = new System.Drawing.Point(9, 31);
             this.chartWait.Margin = new System.Windows.Forms.Padding(6);
             this.chartWait.Name = "chartWait";
@@ -132,7 +120,6 @@
             this.ClientSize = new System.Drawing.Size(904, 524);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.test);
             this.Controls.Add(this.button_exec);
             this.Controls.Add(this.button_setup);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -155,7 +142,6 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chartExec;
         private System.Windows.Forms.Button button_setup;
         private System.Windows.Forms.Button button_exec;
-        private System.Windows.Forms.Button test;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartWait;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;

@@ -11,7 +11,7 @@ namespace TaskManager
         public int CoefPriorityUpdate { get; }
         public int Priority { get; private set; }
         public int Executed { get; private set; }
-        public bool Done => Executed == ExecTime;
+        public bool Done => Executed >= ExecTime;
 
         public Task(string name, int basePriority, int launchTime, int execTime, int coefPriorityUpdate)
         {
